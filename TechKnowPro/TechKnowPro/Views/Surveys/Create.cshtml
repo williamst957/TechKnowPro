@@ -1,0 +1,186 @@
+﻿@model TechKnowPro.Models.Survey
+
+@{
+    ViewBag.Title = "Create";
+}
+<div class="col-md-12">
+    <div class="card">
+        <form id="TypeValidation" class="form-horizontal" action="Create" method="post">
+            <div class="card-header card-header-text" data-background-color="purple">
+                <h4 class="card-title">Survey</h4>
+            </div>
+            <div class="card-content">
+                <div class="row">
+                    <label class="col-sm-1 label-on-left">Customer Id</label>
+                    <div class="col-sm-3">
+                        <div class="form-group label-floating">
+                            <label class="control-label"></label>
+                            <input class="form-control" type="text" value="@ViewBag.UserId" name="CustomerId" readonly />
+                        </div>
+                    </div>
+                    <label class="col-sm-2 label-on-left">Select Incident</label>
+                    <div class="col-sm-4">
+                        <div class="form-group label-floating">
+                            <label class="control-label"></label>
+                            @Html.DropDownList("IncidentId", null, "-Select Incident Please-", htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top:40px">
+                     
+                    <h6 class="text-center">Please Rate the Incident by the following categories</h6>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 label-on-left">Response Time</label>
+                    <div class="col-sm-2" style="padding-top: 19px">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="ResponseTime" value="NotSatisfied">  Not Satisfied
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-2" style="padding-top: 19px">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="ResponseTime" value="SomeWhat Satisfied">  SomeWhat Satisfied
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-2" style="padding-top: 19px">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="ResponseTime" value="Satisfied">   Satisfied
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-2" style="padding-top: 19px">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="ResponseTime" value=" Completely Satisfied">  Completely Satisfied
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-sm-2 label-on-left">Technician Efficieny</label>
+                    <div class="col-sm-2" style="padding-top: 19px">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="Technician" value="NotSatisfied">  Not Satisfied
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-2" style="padding-top: 19px">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="Technician" value="SomeWhat Satisfied">  SomeWhat Satisfied
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-2" style="padding-top: 19px">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="Technician" value="Satisfied">   Satisfied
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-2" style="padding-top: 19px">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="Technician" value=" Completely Satisfied">  Completely Satisfied
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-sm-2 label-on-left">Problem Resolution</label>
+                    <div class="col-sm-2" style="padding-top: 19px">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="ProblemRes" value="NotSatisfied">  Not Satisfied
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-2" style="padding-top: 19px">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="ProblemRes" value="SomeWhat Satisfied">  SomeWhat Satisfied
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-2" style="padding-top: 19px">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="ProblemRes" value="Satisfied">   Satisfied
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-2" style="padding-top: 19px">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="ProblemRes" value=" Completely Satisfied">  Completely Satisfied
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-sm-1 label-on-left">Additional Commnet</label>
+                    <div class="col-sm-4">
+                        <div class="form-group label-floating">
+                            <label class="control-label"></label>
+                            <textarea rows="3" class="form-control" type="text" name="Comments"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="optionsCheckboxes"> Please Contact me to discuss
+                            </label>
+                        </div>
+                    </div>
+
+                    <label class="col-sm-2 label-on-left">Contact Via</label>
+                    <div class="col-sm-2" style="padding-top: 19px">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="ContactVia" value="Email">  Email
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-2" style="padding-top: 19px">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="ContactVia" value="Phone"> Phone
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-rose btn-fill">Submit</button>
+                </div>
+</form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function setFormValidation(id) {
+        $(id).validate({
+            errorPlacement: function (error, element) {
+                $(element).closest('div').addClass('has-error');
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        setFormValidation('#TypeValidation');
+    });
+
+  
+
+</script>

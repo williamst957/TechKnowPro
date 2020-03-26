@@ -1,0 +1,64 @@
+﻿@model IEnumerable<TechKnowPro.Models.Incident>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header card-header-text" data-background-color="purple">
+            <h4 class="card-title">View Incident</h4>
+        </div>
+        <div class="card-content">
+            <div class="form-horizontal">
+                <div class="row">
+                    <label class="col-sm-2 label-on-left">Select Customer</label>
+                    <div class="col-sm-3">
+                        <div class="form-group label-floating">
+                            <label class="control-label"></label>
+                            @Html.DropDownList("CustomerId", null, "-Select Customer-", htmlAttributes: new { @class = "form-control" , @id = "CustomerId" })
+                        </div>
+                    </div>
+
+                    <label class="col-sm-2 label-on-left">Select Incident</label>
+                    <div class="col-sm-3">
+                        <div class="form-group label-floating">
+                            <label class="control-label"></label>
+                            @Html.DropDownList("IncidentId", null, "-Select Incident-", htmlAttributes: new { @class = "form-control" , @id = "Incident" })
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <button type="button" onclick="LoadIncident()" class="btn btn-purple btn-fill">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="IncidentData">
+
+    </div>
+</div>
+
+
+<script>
+    var LoadIncident = function LoadIncidentDetail() {
+        var CustomerID = $('#CustomerId :selected').val();
+        var IncidentID = $('#Incident :selected').val();
+        $.ajax({
+            url: '/Incidents/LoadIncidentDetail/',
+            type: "GET",
+            data: {
+                CustomerID: CustomerID,
+                IncidentID: IncidentID,
+            },
+            success: function (data) {
+                debugger
+                $('.IncidentData').html(data);
+            }
+        });
+    }
+</script>

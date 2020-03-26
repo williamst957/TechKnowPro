@@ -1,0 +1,29 @@
+﻿@using TechKnowPro.Common;
+@{ 
+    var userId = Convert.ToInt16(Session["UserId"]);
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-icon" data-background-color="purple">
+                    <h4 class="card-title">Home</h4>
+                </div>
+                <div class="card-content">
+                    @if (Users.LoginLevel(userId) == 1)
+                    {
+                        <h2>You Login as Admin</h2>
+                    }
+                    else if (Users.LoginLevel(userId) == 2)
+                    {
+                        <h2>You Login as Technician</h2>
+                    }
+                    else if (Users.LoginLevel(userId) == 3)
+                    {
+                        <h2>You Login as Customer</h2>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

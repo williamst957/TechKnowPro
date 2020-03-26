@@ -1,0 +1,56 @@
+﻿@model  TechKnowPro.Models.Incident
+
+@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header card-header-text" data-background-color="purple">
+            <h4 class="card-title">Incident Detail</h4>
+        </div>
+        <div class="card-content">
+            <div class="form-horizontal">
+                <div class="row">
+                    <label class="col-sm-2 label-on-left" style="padding-top: 10px;">Customer ID</label>
+                    <div class="col-sm-2">
+                        <div class="form-group label-floating">
+                            <label class="control-label"></label>
+                            <span><strong>@Model.CustomerId</strong></span>
+                        </div>
+                    </div>
+
+                    <label class="col-sm-2 label-on-left" style="padding-top: 10px;">Report Time</label>
+                    <div class="col-sm-2">
+                        <div class="form-group label-floating">
+                            <label class="control-label"></label>
+                            <span><strong>@Model.ReportTime</strong></span>
+                        </div>
+                    </div>
+
+                    <label class="col-sm-2 label-on-left" style="padding-top: 10px;">Incident No</label>
+                    <div class="col-sm-2">
+                        <div class="form-group label-floating">
+                            <label class="control-label"></label>
+                            <span><strong>@Model.IncidentNo</strong></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                   
+
+                    <label class="col-sm-2 label-on-left" style="padding-top: 10px;">Description</label>
+                    <div class="col-sm-8">
+                        <div class="form-group label-floating">
+                            <label class="control-label"></label>
+                            <span><strong>@Model.Comments</strong></span>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+    </div>
+</div>
+
+
