@@ -1,0 +1,64 @@
+﻿@model IEnumerable<TechKnowPro.Models.Survey>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header card-header-text" data-background-color="purple">
+            <h4 class="card-title">View Survey</h4>
+        </div>
+        <div class="card-content">
+            <div class="form-horizontal">
+                <div class="row">
+                    <label class="col-sm-2 label-on-left">Select Customer</label>
+                    <div class="col-sm-3">
+                        <div class="form-group label-floating">
+                            <label class="control-label"></label>
+                            @Html.DropDownList("CustomerId", null, "-Select Customer-", htmlAttributes: new { @class = "form-control", @id = "Customer" })
+                        </div>
+                    </div>
+
+                    <label class="col-sm-2 label-on-left">Select Incident</label>
+                    <div class="col-sm-3">
+                        <div class="form-group label-floating">
+                            <label class="control-label"></label>
+                            @Html.DropDownList("IncidentId", null, "-Select Incident-", htmlAttributes: new { @class = "form-control", @id = "Incident" })
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <button type="button" onclick="LoadDetail()" class="btn btn-primary btn-fill">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="SurveyData">
+
+    </div>
+</div>
+
+
+<script>
+    var LoadDetail = function LoadSurvey() {
+        var CustomerID = $('#Customer :selected').val();
+        var IncidentID = $('#Incident :selected').val();
+        $.ajax({
+            url: '/Surveys/LoadSurveyDetail/',
+            type: "GET",
+            data: {
+                CustomerID: CustomerID,
+                IncidentID: IncidentID,
+            },
+            success: function (data) {
+                debugger
+                $('.SurveyData').html(data);
+            }
+        });
+    }
+</script>
+

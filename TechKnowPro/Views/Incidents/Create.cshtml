@@ -1,0 +1,101 @@
+﻿@model TechKnowPro.Models.Incident
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="col-md-12">
+    <div class="card">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="card-header card-header-text" data-background-color="purple">
+                <h4 class="card-title">Incident</h4>
+            </div>
+            <div class="card-content">
+                <div class="form-horizontal">
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Select Customer</label>
+                        <div class="col-sm-4">
+                            <div class="form-group label-floating">
+                                <label class="control-label"></label>
+                                @Html.DropDownList("CustomerId", null, "- Please select Cusotmer -", htmlAttributes: new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <label class="col-sm-1 label-on-left">Customer Id</label>
+                        <div class="col-sm-3">
+                            <div class="form-group label-floating">
+                                <label class="control-label"></label>
+                                <input class="form-control" type="text" value="" name="IncidentNo"  disabled />
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Incident #</label>
+                        <div class="col-sm-4">
+                            <div class="form-group label-floating">
+                                <label class="control-label"></label>
+                                <input class="form-control" type="text" value="@Model.IncidentNo" name="IncidentNo" readonly />
+                            </div>
+                        </div>
+                        <label class="col-sm-1 label-on-left">ReportTime</label>
+                        <div class="col-sm-3">
+                            <div class="form-group label-floating">
+                                <label class="control-label"></label>
+                                <input type="text" name="ReportTime" value="@DateTime.Now" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Description</label>
+                        <div class="col-sm-6">
+                            <div class="form-group label-floating">
+                                <label class="control-label"></label>
+                             <textarea class="form-control" rows="4" name="Comments"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Contact Via</label>
+                        <div class="col-sm-2" style="padding-top: 19px">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" value="1" name="ContactVia"> Email
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-2" style="padding-top: 19px">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" value="2" name="ContactVia"> Phone
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-2" style="padding-top: 19px">
+                            <div class="radio">
+                                <label> 
+                                    <input type="radio" value="3" name="ContactVia"> In Person
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

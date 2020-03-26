@@ -1,0 +1,72 @@
+﻿@model  TechKnowPro.Models.Survey
+
+@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header card-header-text" data-background-color="purple">
+            <h4 class="card-title">Survey Detail</h4>
+        </div>
+        <div class="card-content">
+            <div class="form-horizontal">
+                <div class="row">
+                    <label class="col-sm-2 label-on-left" style="padding-top: 10px;">Response Time</label>
+                    <div class="col-sm-4">
+                        <div class="form-group label-floating">
+                            <label class="control-label"></label>
+                            <span><strong>@Model.ResponseTime</strong></span>
+                        </div>
+                    </div>
+
+                    <label class="col-sm-3 label-on-left" style="padding-top: 10px;">Contact to discuss point:</label>
+                    <div class="col-sm-3">
+                        <div class="form-group label-floating">
+                            <label class="control-label"></label>
+                            <span><strong>No</strong></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 label-on-left" style="padding-top: 10px;">Technician Efficiency</label>
+                    <div class="col-sm-4">
+                        <div class="form-group label-floating">
+                            <label class="control-label"></label>
+                            <span><strong>@Model.Technician</strong></span>
+                        </div>
+                    </div>
+
+                    <label class="col-sm-2 label-on-left" style="padding-top: 10px;">Prefer Contact Method</label>
+                    <div class="col-sm-4">
+                        <div class="form-group label-floating">
+                            <label class="control-label"></label>
+                            <span><strong>@Model.ContactVia</strong></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <label class="col-sm-2 label-on-left" style="padding-top: 10px;">Problem Resolution</label>
+                    <div class="col-sm-4">
+                        <div class="form-group label-floating">
+                            <label class="control-label"></label>
+                            <span><strong>@Model.ProblemRes</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-sm-2 label-on-left" style="padding-top: 10px;">Comments</label>
+                    <div class="col-sm-4">
+                        <div class="form-group label-floating">
+                            <label class="control-label"></label>
+                            <span><strong>@Model.Comments</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

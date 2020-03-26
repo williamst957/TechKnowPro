@@ -1,0 +1,107 @@
+﻿@model TechKnowPro.Models.Register
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-icon" data-background-color="rose">
+                    <i class="material-icons">perm_identity</i>
+                </div>
+                <div class="card-content">
+                    <h4 class="card-title">
+                        Edit Profile -
+                        <small class="category">Complete your profile</small>
+                    </h4>
+                    <form method="post" action="SaveProfile" class="form-horizontal">
+
+                        <div class="row">
+                            <h3>User Information</h3>
+                            <input type="hidden" value="@Model.Id" name="Id" />
+                            <label class="col-sm-2 label-on-left">Profile Name</label>
+                            <div class="col-sm-4">
+                                <div class="form-group label-floating">
+                                    <label class="control-label"></label>
+                                    <input class="form-control" type="text" name="ProfileName" />
+                                </div>
+                            </div>
+                            <label class="col-sm-2 label-on-left">Username</label>
+                            <div class="col-sm-4">
+                                <div class="form-group label-floating">
+                                    <label class="control-label"></label>
+                                    <input type="text" name="UserName" class="form-control">
+                                </div>
+                            </div>
+
+                            <label class="col-sm-2 label-on-left">Password</label>
+                            <div class="col-sm-4">
+                                <div class="form-group label-floating">
+                                    <label class="control-label"></label>
+                                    <input type="password" name="Password" value="@Model.Password" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="row">
+                            <h3>Contact Information</h3>
+                            <label class="col-sm-2 label-on-left">Fist Name</label>
+                            <div class="col-sm-4">
+                                <div class="form-group label-floating">
+                                    <label class="control-label"></label>
+                                    <input type="text" name="FirstName" value="@Model.FirstName" class="form-control">
+                                </div>
+                            </div>
+
+                            <label class="col-sm-2 label-on-left">Last Name  </label>
+                            <div class="col-sm-4">
+                                <div class="form-group label-floating">
+                                    <label class="control-label"></label>
+                                    <input type="text" name="LastName" value="@Model.LastName" class="form-control">
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+                            <label class="col-sm-2 label-on-left">Position/Title</label>
+                            <div class="col-sm-8">
+                                <div class="form-group label-floating">
+                                    <label class="control-label"></label>
+                                    <input type="text" name="Position" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <label class="col-sm-2 label-on-left">Secret Question</label>
+                            <div class="col-sm-3">
+                                <div class="form-group label-floating">
+                                    <label class="control-label"></label>
+                                    <input type="text" name="SecurityQuestionId" class="form-control">
+                                </div>
+                            </div>
+
+                            <label class="col-sm-2 label-on-left">Secret Answer</label>
+                            <div class="col-sm-2">
+                                <div class="form-group label-floating">
+                                    <label class="control-label"></label>
+                                    <input type="text" name="Answer" class="form-control">
+                                </div>
+                            </div>
+
+                            <label class="col-sm-1 label-on-left">Email</label>
+                            <div class="col-sm-2">
+                                <div class="form-group label-floating">
+                                    <label class="control-label"></label>
+                                    <input type="text" name="Email" value="@Model.Email" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-rose pull-right">Update Profile</button>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
